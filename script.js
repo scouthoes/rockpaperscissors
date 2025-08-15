@@ -53,4 +53,3 @@ playRound("scissors", "rock");
 playRound("papeR", "paper");
 
 console.log(`${humanScore} ${computerScore}`);
-
