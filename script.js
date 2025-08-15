@@ -23,33 +23,35 @@ function getHumanChoice(){
         return "paper";
     }else if (p1 === "scissors"){
         return "scissors";
+    }else{
+        return "rock";
     }
 }
 console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
+let winner = "";
 
 function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
 
     if(humanChoice === computerChoice){
         console.log(`It's a tie! Both players picked ${humanChoice}`);
-        return;
     }
     if(
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")){
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        humanScore++
+        console.log(humanScore++);
+        console.log(winner = humanChoice);
     }else{
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-        computerScore++
+        console.log(computerScore++);
+        console.log(winner = computerChoice);
     }
 }
-playRound("ROCK", "scissors");
-playRound("scissors", "rock");
-playRound("papeR", "paper");
-
-console.log(`${humanScore} ${computerScore}`);
+for(let i = 1; i<5; i++){
+    playRound(getHumanChoice(), getComputerChoice());
+}
